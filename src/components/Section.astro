@@ -1,0 +1,28 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id, class: className } = Astro.props;
+---
+
+<section id={id} class:list={['section', className]}>
+  <div class="container">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section {
+    padding-block: clamp(3rem, 8vw, 6rem);
+  }
+
+  .section :global(h2) {
+    margin-bottom: var(--space-5);
+  }
+
+  .section :global(p + p) {
+    margin-top: var(--space-4);
+  }
+</style>

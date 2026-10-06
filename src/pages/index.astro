@@ -1,0 +1,194 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+
+const title = 'SMS360X — Safety intelligence for modern aviation';
+const description =
+  'SMS360X turns safety data into safety information, and safety information into safety intelligence — so operators, regulators, and states can make defensible decisions.';
+---
+
+<Base title={title} description={description}>
+  <header class="hero">
+    <div class="container">
+      <h1>Safety intelligence for modern aviation.</h1>
+      <p class="lead">
+        SMS360X turns safety data into safety information, and safety
+        information into safety intelligence — so operators, regulators, and
+        states can make defensible decisions.
+      </p>
+      <a class="button" href="mailto:info@sms360x.com">Request an early demo</a>
+    </div>
+  </header>
+
+  <main>
+    <Section id="what-sms360x-does">
+      <h2>What SMS360X does</h2>
+      <div class="columns">
+        <div class="column">
+          <h3>Capture</h3>
+          <p>
+            Occurrences, hazards, risks, and barriers in a single coherent
+            model, aligned with ICAO Annex 19 and Doc 9859.
+          </p>
+        </div>
+        <div class="column">
+          <h3>Connect</h3>
+          <p>
+            Safety data linked across State, Regulator, Operator, and User,
+            with tenant isolation by design.
+          </p>
+        </div>
+        <div class="column">
+          <h3>Decide</h3>
+          <p>
+            Dashboards and intelligence for safety managers, accountable
+            executives, regulators, and state safety programmes.
+          </p>
+        </div>
+      </div>
+    </Section>
+
+    <Section id="platform-flow" class="surface">
+      <h2>Platform flow</h2>
+      <ol class="flow">
+        <li>Safety Data</li>
+        <li>Safety Information</li>
+        <li>Safety Intelligence</li>
+        <li>Decision Support</li>
+      </ol>
+    </Section>
+
+    <Section id="frameworks">
+      <h2>Built on international frameworks</h2>
+      <p>
+        SMS360X is grounded in the standards and guidance that already govern
+        aviation safety management.
+      </p>
+      <ul class="frameworks">
+        <li>ICAO Annex 19</li>
+        <li>ICAO Doc 9859</li>
+        <li>ICAO Doc 10159</li>
+        <li>ADREP</li>
+        <li>HFACS</li>
+      </ul>
+    </Section>
+
+    <Section id="who-it-is-for" class="surface">
+      <h2>Who it is for</h2>
+      <ul class="audience">
+        <li>Safety Managers</li>
+        <li>Accountable Executives</li>
+        <li>Regulators</li>
+        <li>State Safety Programmes</li>
+      </ul>
+    </Section>
+
+    <Section id="early-access">
+      <h2>Early access</h2>
+      <p>
+        SMS360X is in active development. We are inviting a small number of
+        operators and regulators to participate in an early demo.
+      </p>
+      <a class="button" href="mailto:info@sms360x.com">Request an early demo</a>
+    </Section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="brand">SMS360X</span>
+      <a href="mailto:info@sms360x.com">info@sms360x.com</a>
+    </div>
+  </footer>
+</Base>
+
+<style is:global>
+  .hero {
+    padding-block: clamp(4rem, 10vw, 8rem);
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero h1 {
+    max-width: 20ch;
+  }
+
+  .hero .lead {
+    margin-top: var(--space-5);
+    color: var(--color-text-muted);
+    max-width: 55ch;
+  }
+
+  .hero .button {
+    margin-top: var(--space-6);
+  }
+
+  .surface {
+    background-color: var(--color-surface);
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: var(--space-6);
+  }
+
+  .column h3 {
+    margin-bottom: var(--space-3);
+  }
+
+  .column p {
+    color: var(--color-text-muted);
+  }
+
+  .frameworks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-5);
+    padding: 0;
+    list-style: none;
+  }
+
+  .frameworks li {
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .audience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: var(--space-4);
+    padding: 0;
+    list-style: none;
+  }
+
+  .audience li {
+    padding: var(--space-5);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+  }
+
+  .site-footer {
+    padding-block: var(--space-6);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+  }
+
+  .brand {
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+</style>
