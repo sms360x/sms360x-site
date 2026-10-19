@@ -54,11 +54,11 @@ const description =
             </p>
           </div>
         </div>
-        <p class="section-note">
-          From frontline reporting to boardroom decisions, SMS360X provides a
-          single source of truth.
-        </p>
       </div>
+      <p class="section-summary">
+        From frontline reporting to boardroom decisions, SMS360X provides a
+        single source of truth.
+      </p>
     </Section>
 
     <Section id="platform-flow" class="surface" style="padding: 6rem 0;">
@@ -265,6 +265,24 @@ const description =
     color: var(--color-text-muted);
     margin-top: 3rem;
     font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  }
+
+  .section-summary {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #111827;
+    max-width: 800px;
+    margin: 4rem auto 0 auto;
+    line-height: 1.6;
+  }
+
+  .section-summary::before {
+    content: "•";
+    display: block;
+    color: #0d9488;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
 
   .section-2-wrapper {
