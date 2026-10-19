@@ -71,23 +71,29 @@ const description =
       </ol>
     </Section>
 
-    <Section id="frameworks" style="max-width: 800px; margin-left: 0;">
-      <h2>Built on international frameworks</h2>
-      <p>
-        SMS360X is grounded in the standards and guidance that already govern
-        aviation safety management.
-      </p>
-      <ul class="frameworks" style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;">
-        <li>ICAO Annex 19</li>
-        <li>ICAO Doc 9859</li>
-        <li>ICAO Doc 10159</li>
-        <li>ADREP</li>
-        <li>HFACS</li>
-      </ul>
-      <p class="section-note">
-        Compliance isn't an afterthought — it's the foundation. Your data is
-        structured to meet ICAO and state requirements out of the box.
-      </p>
+    <Section id="frameworks">
+      <div class="frameworks-grid">
+        <div class="frameworks-text">
+          <h2>Built on international frameworks</h2>
+          <p>
+            SMS360X is grounded in the standards and guidance that already govern
+            aviation safety management.
+          </p>
+          <p class="compliance-note">
+            Compliance isn't an afterthought — it's the foundation. Your data is
+            structured to meet ICAO and state requirements out of the box.
+          </p>
+        </div>
+        <div class="frameworks-badges">
+          <span class="badge">ICAO Annex 19</span>
+          <span class="badge">ICAO Doc 9859</span>
+          <span class="badge">ICAO Doc 10159</span>
+          <span class="badge">ADREP</span>
+          <span class="badge">HFACS</span>
+          <span class="badge">Nano-codes</span>
+          <span class="badge">Bow-Tie</span>
+        </div>
+      </div>
     </Section>
 
     <Section id="who-it-is-for" class="surface">
@@ -266,22 +272,49 @@ const description =
     margin: 0 auto;
   }
 
-  .frameworks {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-top: var(--space-5);
-    padding: 0;
-    list-style: none;
+  .frameworks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
   }
 
-  .frameworks li {
+  .frameworks-text h2 {
+    margin-bottom: var(--space-4);
+  }
+
+  .frameworks-text p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  .frameworks-text .compliance-note {
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .frameworks-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-content: flex-start;
+  }
+
+  .frameworks-badges .badge {
+    display: inline-block;
     padding: var(--space-2) var(--space-4);
     background-color: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: 999px;
     font-size: 0.95rem;
     font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .frameworks-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
   }
 
   .audience {

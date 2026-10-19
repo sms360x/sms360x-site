@@ -147,6 +147,34 @@ button:focus-visible,
   height: 33%;
 }
 
+.radar-fixed .radar-blip {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(13, 148, 136, 0.9);
+  opacity: 0;
+  animation: blip-fade 4s ease-in-out infinite;
+}
+
+.radar-fixed .blip-1 { top: 25%; left: 60%; animation-delay: 0s; }
+.radar-fixed .blip-2 { top: 40%; left: 30%; animation-delay: 0.5s; }
+.radar-fixed .blip-3 { top: 65%; left: 70%; animation-delay: 1s; }
+.radar-fixed .blip-4 { top: 35%; left: 80%; animation-delay: 1.5s; }
+.radar-fixed .blip-5 { top: 75%; left: 40%; animation-delay: 2s; }
+.radar-fixed .blip-6 { top: 20%; left: 45%; animation-delay: 2.5s; }
+.radar-fixed .blip-7 { top: 55%; left: 25%; animation-delay: 3s; }
+.radar-fixed .blip-8 { top: 80%; left: 60%; animation-delay: 3.5s; }
+.radar-fixed .blip-9 { top: 45%; left: 55%; animation-delay: 0.3s; }
+.radar-fixed .blip-10 { top: 30%; left: 20%; animation-delay: 0.8s; }
+.radar-fixed .blip-11 { top: 70%; left: 85%; animation-delay: 1.3s; }
+.radar-fixed .blip-12 { top: 50%; left: 40%; animation-delay: 1.8s; }
+
+@keyframes blip-fade {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
 @keyframes radar-spin {
   from {
     transform: rotate(0deg);
