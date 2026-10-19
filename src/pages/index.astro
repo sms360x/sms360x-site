@@ -10,13 +10,20 @@ const description =
 <Base title={title} description={description}>
   <header class="hero">
     <div class="container">
-      <h1>Safety intelligence for modern aviation.</h1>
-      <p class="lead">
-        SMS360X turns safety data into safety information, and safety
-        information into safety intelligence — so operators, regulators, and
-        states can make defensible decisions.
-      </p>
-      <button class="button" onclick="document.getElementById('demo-modal')?.showModal()">Request an early demo</button>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Safety intelligence for modern aviation.</h1>
+          <p class="lead">
+            SMS360X turns safety data into safety information, and safety
+            information into safety intelligence — so operators, regulators, and
+            states can make defensible decisions.
+          </p>
+          <button class="button" onclick="document.getElementById('demo-modal')?.showModal()">Request an early demo</button>
+        </div>
+        <div class="hero-image">
+          <img src="/Hero Image.png" alt="SMS360X safety intelligence card" />
+        </div>
+      </div>
     </div>
   </header>
 
@@ -46,6 +53,10 @@ const description =
           </p>
         </div>
       </div>
+      <p class="section-note">
+        From frontline reporting to boardroom decisions, SMS360X provides a
+        single source of truth.
+      </p>
     </Section>
 
     <Section id="platform-flow" class="surface">
@@ -71,6 +82,10 @@ const description =
         <li>ADREP</li>
         <li>HFACS</li>
       </ul>
+      <p class="section-note">
+        Compliance isn't an afterthought — it's the foundation. Your data is
+        structured to meet ICAO and state requirements out of the box.
+      </p>
     </Section>
 
     <Section id="who-it-is-for" class="surface">
@@ -147,7 +162,9 @@ const description =
   <footer class="site-footer">
     <div class="container footer-inner">
       <span class="brand">SMS360X</span>
-      <button class="button" onclick="document.getElementById('demo-modal')?.showModal()">Request early demo</button>
+      <p class="footer-attribution">
+        A <a href="https://gsacharya.com" target="_blank" rel="noopener noreferrer">gsacharya.com</a> project
+      </p>
     </div>
   </footer>
 </Base>
@@ -173,6 +190,42 @@ const description =
     margin-top: var(--space-6);
   }
 
+  .hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    align-items: center;
+  }
+
+  .hero-text {
+    flex: 1 1 300px;
+  }
+
+  .hero-image {
+    flex: 1 1 300px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-lg);
+  }
+
+  @media (max-width: 640px) {
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-text {
+      order: 1;
+    }
+    .hero-image {
+      order: 2;
+    }
+  }
+
   .surface {
     background-color: var(--color-surface);
   }
@@ -189,6 +242,13 @@ const description =
 
   .column p {
     color: var(--color-text-muted);
+  }
+
+  .section-note {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-top: var(--space-6);
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
   }
 
   .frameworks {
@@ -241,6 +301,23 @@ const description =
   .brand {
     font-weight: 700;
     letter-spacing: 0.02em;
+  }
+
+  .footer-attribution {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .footer-attribution a {
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  .footer-attribution a:hover {
+    color: var(--color-accent);
   }
 
   .demo-form {
