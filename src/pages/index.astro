@@ -16,7 +16,7 @@ const description =
         information into safety intelligence — so operators, regulators, and
         states can make defensible decisions.
       </p>
-      <a class="button" href="mailto:info@sms360x.com">Request an early demo</a>
+      <button class="button" onclick="document.getElementById('demo-modal')?.showModal()">Request an early demo</button>
     </div>
   </header>
 
@@ -89,14 +89,65 @@ const description =
         SMS360X is in active development. We are inviting a small number of
         operators and regulators to participate in an early demo.
       </p>
-      <a class="button" href="mailto:info@sms360x.com">Request an early demo</a>
+      <button class="button" onclick="document.getElementById('demo-modal')?.showModal()">Request an early demo</button>
     </Section>
+
+    <dialog id="demo-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="document.getElementById('demo-modal')?.close()">×</button>
+        <h2>Request an Early Demo</h2>
+        <form action="https://api.web3forms.com/submit" method="POST" class="demo-form" novalidate>
+          <input type="hidden" name="access_key" value="5d866176-c3b5-4cae-bd56-31a3f7d4f331" />
+          <input type="hidden" name="subject" value="New Early Demo Request - SMS360X" />
+          <input type="hidden" name="to" value="sms360x@gmail.com" />
+          <div class="form-group">
+            <label for="modal-demo-name">Name</label>
+            <input
+              type="text"
+              id="modal-demo-name"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="modal-demo-email">Email</label>
+            <input
+              type="email"
+              id="modal-demo-email"
+              name="email"
+              placeholder="you@company.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="modal-demo-company">Company</label>
+            <input
+              type="text"
+              id="modal-demo-company"
+              name="company"
+              placeholder="Company / organisation"
+            />
+          </div>
+          <div class="form-group">
+            <label for="modal-demo-message">Message</label>
+            <textarea
+              id="modal-demo-message"
+              name="message"
+              rows="4"
+              placeholder="Anything you'd like us to know?"
+            ></textarea>
+          </div>
+          <button type="submit" class="button">Send Request</button>
+        </form>
+      </div>
+    </dialog>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <span class="brand">SMS360X</span>
-      <a href="mailto:info@sms360x.com">info@sms360x.com</a>
+      <button class="button" onclick="document.getElementById('demo-modal')?.showModal()">Request early demo</button>
     </div>
   </footer>
 </Base>
@@ -190,5 +241,98 @@ const description =
   .brand {
     font-weight: 700;
     letter-spacing: 0.02em;
+  }
+
+  .demo-form {
+    display: grid;
+    gap: var(--space-4);
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  .demo-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .demo-form label {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .demo-form input,
+  .demo-form textarea {
+    width: 100%;
+    padding: var(--space-3);
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-sizing: border-box;
+  }
+
+  .demo-form input:focus,
+  .demo-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary, var(--color-border));
+  }
+
+  .demo-form button.button {
+    width: 100%;
+    margin-top: var(--space-2);
+  }
+
+  .modal {
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-content {
+    position: relative;
+    max-width: 42rem;
+    width: 92vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: var(--space-8);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-sizing: border-box;
+    margin: auto;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: var(--space-1);
+    color: var(--color-text-muted);
+  }
+
+  .modal-close:hover {
+    color: var(--color-text);
+  }
+
+  .modal h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+  }
+
+  .demo-form {
+    display: grid;
+    gap: var(--space-4);
   }
 </style>
