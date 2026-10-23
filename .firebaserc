@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "aerosafety-sms-prod"
+  },
+  "targets": {
+    "aerosafety-sms-prod": {
+      "hosting": {
+        "marketing": [
+          "sms360x-marketing"
+        ]
+      }
+    }
+  }
+}
